@@ -9,9 +9,12 @@ public class Transmorgify {
 			File in = new File(args[0]);
 			Scanner s = new Scanner(in);
 			s.useDelimiter("");
+
 			int docSIZE = getSize(s);
+			Point imgSIZE = imgDims(docSIZE);
 
 			System.out.println(docSIZE);
+			System.out.println(imgSIZE);
 	}
 
 	public static int getSize(Scanner s){
@@ -21,5 +24,15 @@ public class Transmorgify {
 			i++;
 		}
 		return i;
+	}
+	public static Point imgDims(int SIZE){
+		int x = SIZE;
+		int y = 0;
+		if(SIZE%2==0){
+			 y = SIZE;
+		} else {
+			y = SIZE+1;
+		}
+		return new Point(x,y);
 	}
 }
