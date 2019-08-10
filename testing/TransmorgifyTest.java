@@ -4,7 +4,7 @@ import java.util.*;
 import javax.imageio.*;
 import java.awt.image.*;
 
-public class Transmorgify {
+public class TransmorgifyTest {
 	public static void main(String[] args)
 		throws FileNotFoundException, IOException{
 			File in = new File(args[0]);
