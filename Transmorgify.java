@@ -34,8 +34,8 @@ public class Transmorgify {
 		int a = (int)size.getX();
 		int b = (int)size.getY();
 		BufferedImage temp = new BufferedImage(a, b, BufferedImage.TYPE_INT_RGB);
-		for(int x=0; x<size.getX(); x++){
-			for(int y=0; y<size.getY(); y++){
+		for(int x=0; x<a; x++){
+			for(int y=0; y<b; y++){
 				Color color = new Color(getColor(c), getColor(c), getColor(c));
 				int clr = color.getRGB();
 				temp.setRGB(x, y, clr);
