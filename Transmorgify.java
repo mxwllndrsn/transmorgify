@@ -15,23 +15,19 @@ public class Transmorgify {
 			ArrayList<Integer> charVAL = getVals(s);
 						//System.out.println("charVAL.size(): "+charVAL.size());
 			int docSIZE = charVAL.size();
-			Point imgSIZE = imgDims(docSIZE);
+			Point imgSIZE = imgDims(docSIZE/3);
 			BufferedImage img = drawIMAGE(charVAL, imgSIZE);
         	ImageIO.write(img, "png", out);
 	}
 	public static Point imgDims(int size){
 		int x = 500;
-		int y = size/500;
-		//System.out.println("imgDims x: "+x);
-		//System.out.println("imgDims y: "+y);
+		int y = (size/500)+1;
 		return new Point(x, y);
 	}
 	public static ArrayList<Integer> getVals(Scanner s){
 		ArrayList<Integer> c = new ArrayList<Integer>();
 		while(s.hasNext()){
-			//System.out.print(s.next()+" ");
 			c.add((int)s.next().charAt(0));
-			//System.out.print(c.remove(0)+" ");
 		}
 		return c;
 	}
@@ -45,25 +41,15 @@ public class Transmorgify {
 			for(int y=0; y<b; y++){
 				Color color = new Color(getColor(c), getColor(c), getColor(c));
 				int clr = color.getRGB();
-					trackDraw++;
-					if(clr==-16777216){
-						trackBlack++;
-					}
-				//temp.setRGB(x, y, clr);
+				temp.setRGB(x, y, clr);
 			}
 		}
-					//System.out.println("drawIMAGE x: "+a);
-					//System.out.println("drawIMAGE y: "+b);
-					//System.out.println("draw vals: "+trackDraw);
-					//System.out.println("black vals: "+trackBlack);
 		return temp;
 	}
 	public static int getColor(ArrayList<Integer> c){
 		int i = 0;
 		if(c.size()!=0){
-			System.out.print(c.remove(0)+" ");
-			//i = c.remove(0);
-			//System.out.print(i + " ");
+			i = c.remove(0);
 		}
 		return i;
 	}
