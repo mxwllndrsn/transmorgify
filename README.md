@@ -8,10 +8,10 @@ Transmorgify
 Demorgify
 =========
 
-#### *The opposite:*
+#### The opposite:
 ``` Demorgify input.png output.txt ```
 
-_Limitations:_
+#### Limitations:
   - png only
   - ascii only
   - pixel count approximate
